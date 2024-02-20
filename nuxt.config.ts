@@ -91,7 +91,7 @@ export default defineNuxtConfig({
   },
   image: {
     aliyun: {
-      baseURL: "http://localhost:3000/",
+      baseURL: "https://fastsite.pro/",
     },
   },
   css: ["@/node_modules/bulma/css/bulma.css", "@/assets/main.css"],
