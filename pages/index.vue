@@ -13,9 +13,10 @@ const animationFun = () => {
     targets: [".title", ".title-h2"],
     translateY: [mobileScin.value],
     easing: "easeInOutExpo",
-    delay: function (el, i, l) {
-      return i * 850;
-    },
+    // delay: function (el, i, l) {
+    //   return i * 850;
+    // },
+    delay: 0,
     opacity: {
       value: 1,
     },
