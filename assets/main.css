@@ -363,6 +363,8 @@
   color: #333;
   flex-direction: column;
   justify-content: center;
+  z-index: 44;
+  position: relative;
 }
 .project-slid:hover .slider-image {
   transform: scale(1.06);
@@ -508,7 +510,7 @@
   margin: 0 0 40px;
   display: grid;
   grid-gap: 4px;
-  grid-template-columns: 1fr 50%;
+  grid-template-columns: 1fr 40%;
 }
 
 .project-block-img-left {
@@ -521,6 +523,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .project-block-img-right {
   height: 200px;
@@ -529,7 +532,9 @@
 .project-block-img-right img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: none;
+  object-fit: none;
+  cursor: pointer;
 }
 .project-info {
   margin: 0 0 30px;
@@ -679,9 +684,9 @@
     margin: 0 0 30px;
   }
   .stack-tabs-content {
-    padding: 0 0% 0 20px;
+    padding: 0 0% 0 0px;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 16px;
   }
   .index-stack-info {
     margin: 0 0 60px;
@@ -706,5 +711,17 @@
   }
   .custom-tabs-tab img {
     max-height: 30px;
+  }
+  .custom-tabs-left {
+    float: left;
+    width: 100%;
+    margin: 0px 0 10px;
+  }
+  .stack-tabs-wraper {
+    float: left;
+    width: 100%;
+  }
+  .project-info-icon a {
+    font-size: 15px;
   }
 }

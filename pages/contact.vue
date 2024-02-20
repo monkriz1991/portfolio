@@ -1,9 +1,11 @@
 <script setup>
-import { animationStore } from "@/store/animation";
-const store = animationStore();
+// import { animationStore } from "@/store/animation";
+import animationLottie from "@/public/animation_contact.json";
+
 const { $anime } = useNuxtApp();
-const animationOne = ref(null);
-const isVisible = ref(true);
+// const store = animationStore();
+// const animationOne = ref(null);
+// const isVisible = ref(true);
 const mobileScin = ref(100);
 const animationFun = () => {
   $anime({
@@ -11,30 +13,30 @@ const animationFun = () => {
     translateY: [mobileScin.value],
     easing: "easeInOutExpo",
     delay: function (el, i, l) {
-      return i * 1050;
+      return i * 850;
     },
     opacity: {
       value: 1,
     },
-    complete: function () {
-      if (!store.isLoadedContact) {
-        fetchData();
-      } else {
-        animationOne.value = store.animationDataContact;
-      }
-    },
+    // complete: function () {
+    //   if (!store.isLoadedContact) {
+    //     fetchData();
+    //   } else {
+    //     animationOne.value = store.animationDataContact;
+    //   }
+    // },
   });
 };
 
-const fetchData = async () => {
-  try {
-    const response = await queryContent("/animation_contact").findOne();
-    store.setAnimationDataContact(response);
-    animationOne.value = response;
-  } catch (error) {
-    console.error("Ошибка при загрузке данных анимации:", error);
-  }
-};
+// const fetchData = async () => {
+//   try {
+//     const response = await queryContent("/animation_contact").findOne();
+//     store.setAnimationDataContact(response);
+//     animationOne.value = response;
+//   } catch (error) {
+//     console.error("Ошибка при загрузке данных анимации:", error);
+//   }
+// };
 const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
@@ -77,7 +79,7 @@ onBeforeUnmount(() => {
             <div class="index-lottie">
               <client-only>
                 <Vue3Lottie
-                  :animationData="animationOne"
+                  :animationData="animationLottie"
                   :height="300"
                   :width="500"
                 />

@@ -78,12 +78,12 @@ const openInNewTab = (url) => {
                 </div>
                 <div class="project-slid-desc">
                   <nuxt-link :to="slide.kirilica">
-                    <ClientOnly>
+                    <!-- <ClientOnly>
                       <nuxt-link
                         class="slid-desc-link"
                         @click.prevent="openInNewTab(slide.link)"
                         ><Icon name="solar:square-top-down-broken" /></nuxt-link
-                    ></ClientOnly>
+                    ></ClientOnly> -->
                     <strong>{{ slide.name }}</strong>
                     <p><Icon name="solar:siderbar-broken" />{{ slide.type }}</p>
                   </nuxt-link>

@@ -46,6 +46,7 @@ filteredResults.value = project.value.results.filter(
                     alt="noimg"
                     format="webp"
                     loading="lazy"
+                    sizes="sm:200px md:200px lg:200px"
                     data-fancybox="galery project"
                   ></NuxtImg>
                 </div>
@@ -60,6 +61,7 @@ filteredResults.value = project.value.results.filter(
                     alt="noimg"
                     format="webp"
                     loading="lazy"
+                    sizes="sm:200px md:200px lg:200px"
                     data-fancybox="galery project"
                   ></NuxtImg>
                 </div>
