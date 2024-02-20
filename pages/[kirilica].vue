@@ -45,7 +45,7 @@ filteredResults.value = project.value.results.filter(
                     :src="item.imgone"
                     alt="noimg"
                     format="webp"
-                    sizes="sm:200px md:200px lg:200px"
+                    sizes="sm:100px md:100px lg:100px"
                     data-fancybox="galery project"
                     preload
                   ></NuxtImg>
@@ -60,7 +60,7 @@ filteredResults.value = project.value.results.filter(
                     :src="itemImg"
                     alt="noimg"
                     format="webp"
-                    sizes="sm:200px md:200px lg:200px"
+                    sizes="sm:50px md:50px lg:50px"
                     data-fancybox="galery project"
                     loading="lazy"
                   ></NuxtImg>

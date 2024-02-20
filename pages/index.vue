@@ -1,6 +1,6 @@
 <script setup>
 // import { animationStore } from "@/store/animation";
-import animationLottie from "@/public/animation_index.json";
+import animationLottie from "@/content/animation_index.json";
 
 const { $anime } = useNuxtApp();
 // const store = animationStore();
