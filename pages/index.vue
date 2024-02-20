@@ -1,12 +1,13 @@
 <script setup>
 // import { animationStore } from "@/store/animation";
 import animationLottie from "@/content/animation_index.json";
-
+import animationLottieMobail from "@/content/animation_index_mobail.json";
 const { $anime } = useNuxtApp();
 // const store = animationStore();
 // const animationOne = ref(null);
 const isVisible = ref(true);
 const mobileScin = ref(100);
+const AniLotti = ref({});
 
 const animationFun = () => {
   $anime({
@@ -43,14 +44,18 @@ const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
       mobileScin.value = 50;
+      AniLotti.value = animationLottieMobail;
     } else {
       mobileScin.value = 100;
+      AniLotti.value = animationLottie;
     }
   });
   if (document.documentElement.clientWidth <= 800) {
     mobileScin.value = 50;
+    AniLotti.value = animationLottieMobail;
   } else {
     mobileScin.value = 100;
+    AniLotti.value = animationLottie;
   }
 };
 onMounted(() => {
@@ -85,7 +90,7 @@ onBeforeUnmount(() => {
             <div class="index-lottie">
               <client-only>
                 <Vue3Lottie
-                  :animationData="animationLottie"
+                  :animationData="AniLotti"
                   :height="300"
                   :width="500"
                 />
@@ -111,7 +116,7 @@ onBeforeUnmount(() => {
                 <div
                   v-show="isVisible"
                   data-aos="fade-up"
-                  data-aos-delay="600"
+                  data-aos-delay="400"
                   data-aos-once="true"
                 >
                   <div class="index-desctiption-block">
@@ -124,7 +129,7 @@ onBeforeUnmount(() => {
                 <div
                   v-show="isVisible"
                   data-aos="fade-up"
-                  data-aos-delay="900"
+                  data-aos-delay="500"
                   data-aos-once="true"
                 >
                   <div class="index-desctiption-block">

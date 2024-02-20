@@ -33,6 +33,7 @@ const activateTab = (index) => {
                   alt="noimg"
                   format="webp"
                   loading="lazy"
+                  sizes="sm:50px md:50px lg:50px"
                 ></NuxtImg>
                 <span>{{ tab.type }}</span>
               </div>
