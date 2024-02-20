@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "kirilica": "arhiterm",
+      "name": "Юлия",
+      "city": "Москва",
+      "img": "/reviews/hero-22.jpg",
+      "preview": "Я тоже похудела с капсулами Leptigen Meridian Diet..."
+    },
+    {
+      "kirilica": "ohis",
+      "name": "Анна",
+      "year": "34 года",
+      "city": "Иркутск",
+      "img": "/reviews/user2.png"
+    },
+    {
+      "kirilica": "frese",
+      "name": "Надежда",
+      "year": "63 года",
+      "city": "Санкт-Петербург",
+      "img": "/reviews/user3.png"
+    },
+    {
+      "kirilica": "profiterm",
+      "name": "Сергей",
+      "year": "48 лет",
+      "city": "Тула",
+      "img": "/reviews/user4.png"
+    },
+    {
+      "kirilica": "bmcargo",
+      "name": "Екатерина",
+      "city": "Самара",
+      "year": "39 лет",
+      "img": "/reviews/hero-13.jpg"
+    },
+    {
+      "kirilica": "arendaby",
+      "name": "Ева",
+      "city": "Москва",
+      "year": "36 лет",
+      "img": "/reviews/user5.png"
+    }
+  ]
+}
