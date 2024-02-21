@@ -53,9 +53,11 @@ export default defineNuxtConfig({
           content: "website",
         },
       ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
   modules: [
+    "nuxt-simple-sitemap",
     "nuxt-icon",
     "@nuxt/image-edge",
     "@nuxt/image",

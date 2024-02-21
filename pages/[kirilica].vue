@@ -1,13 +1,28 @@
 <script setup>
-const router = useRoute();
-const kirilicaParam = router.params.kirilica;
-const filteredResults = ref([]);
-const { data: project } = await useAsyncData("myProject", () =>
-  queryContent("/myproject").only("results").findOne()
-);
-filteredResults.value = project.value.results.filter(
-  (item) => item.kirilica === kirilicaParam
-);
+const router = useRouter();
+const route = useRoute();
+const kirilicaParam = route.params.kirilica;
+let filteredResults = ref([]);
+
+try {
+  const { data: project } = await useAsyncData("myProject", () =>
+    queryContent("/myproject").only("results").findOne()
+  );
+
+  filteredResults = project.value.results.filter(
+    (item) => item.kirilica === kirilicaParam
+  );
+
+  // Проверяем, остались ли элементы после фильтрации
+  if (filteredResults.length === 0) {
+    // Выполняем перенаправление на другую страницу
+    router.push("/"); // Пример перенаправления на страницу ошибки
+  }
+} catch (error) {
+  // Обработка ошибки
+  console.error("Error fetching data:", error);
+  router.push("/"); // Пример перенаправления на страницу ошибки в случае ошибки при загрузке данных
+}
 </script>
 
 <template>

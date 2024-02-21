@@ -43,19 +43,19 @@ const animationFun = () => {
 const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
-      mobileScin.value = 50;
       AniLotti.value = animationLottieMobail;
+      mobileScin.value = 50;
     } else {
-      mobileScin.value = 100;
       AniLotti.value = animationLottie;
+      mobileScin.value = 100;
     }
   });
   if (document.documentElement.clientWidth <= 800) {
-    mobileScin.value = 50;
     AniLotti.value = animationLottieMobail;
+    mobileScin.value = 50;
   } else {
-    mobileScin.value = 100;
     AniLotti.value = animationLottie;
+    mobileScin.value = 100;
   }
 };
 onMounted(() => {
