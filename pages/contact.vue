@@ -7,6 +7,7 @@ const { $anime } = useNuxtApp();
 // const animationOne = ref(null);
 // const isVisible = ref(true);
 const mobileScin = ref(100);
+const lottieAnimation = ref(null);
 // const animationFun = () => {
 //   $anime({
 //     targets: [".title", ".title-h2"],
@@ -65,6 +66,9 @@ onMounted(() => {
 //     duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
 //   });
 // });
+onBeforeUnmount(() => {
+  lottieAnimation.value.destroy();
+});
 </script>
 
 <template>
@@ -80,6 +84,7 @@ onMounted(() => {
             <div class="index-lottie">
               <client-only>
                 <Vue3Lottie
+                  ref="lottieAnimation"
                   :animationData="animationLottie"
                   :height="300"
                   :width="500"
