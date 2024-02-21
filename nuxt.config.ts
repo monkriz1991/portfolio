@@ -85,6 +85,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  site: {
+    url: "https://fastsite.pro/", // Укажите URL вашего сайта здесь
+  },
   piniaPersistedstate: {
     cookieOptions: {
       sameSite: "strict",
