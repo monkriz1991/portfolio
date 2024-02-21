@@ -1,7 +1,7 @@
 <script setup>
 // import { animationStore } from "@/store/animation";
-// import animationLottie from "@/content/animation_index.json";
-// import animationLottieMobail from "@/content/animation_index_mobail.json";
+import animationLottie from "@/content/animation_index.json";
+import animationLottieMobail from "@/content/animation_index_mobail.json";
 const { $anime } = useNuxtApp();
 // const store = animationStore();
 // const animationOne = ref(null);
@@ -9,8 +9,6 @@ const isVisible = ref(true);
 const mobileScin = ref(100);
 const AniLotti = ref({});
 const lottieAnimation = ref(null);
-const AnimationAsync = ref({});
-const animationDataLoaded = ref(false);
 
 const animationFun = () => {
   $anime({
@@ -46,18 +44,18 @@ const animationFun = () => {
 const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
-      //  AniLotti.value = animationLottieMobail;
+      AniLotti.value = animationLottieMobail;
       mobileScin.value = 50;
     } else {
-      // AniLotti.value = animationLottie;
+      AniLotti.value = animationLottie;
       mobileScin.value = 100;
     }
   });
   if (document.documentElement.clientWidth <= 800) {
-    // AniLotti.value = animationLottieMobail;
+    AniLotti.value = animationLottieMobail;
     mobileScin.value = 50;
   } else {
-    //AniLotti.value = animationLottie;
+    AniLotti.value = animationLottie;
     mobileScin.value = 100;
   }
 };
@@ -76,28 +74,6 @@ onBeforeUnmount(() => {
 });
 onBeforeUnmount(() => {
   lottieAnimation.value.destroy();
-});
-const fetchAnimationData = async (url) => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Ошибка загрузки данных анимации");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Произошла ошибка при загрузке данных анимации:", error);
-    throw error;
-  }
-};
-onMounted(async () => {
-  try {
-    const animationData = await fetchAnimationData("/animation_index.json");
-    AnimationAsync.value = animationData;
-    animationDataLoaded.value = true;
-    animationFun();
-  } catch (error) {
-    console.error("Произошла ошибка при загрузке данных анимации:", error);
-  }
 });
 </script>
 
@@ -118,9 +94,8 @@ onMounted(async () => {
             <div class="index-lottie">
               <client-only>
                 <Vue3Lottie
-                  v-if="animationDataLoaded"
                   ref="lottieAnimation"
-                  :animationData="AnimationAsync"
+                  :animationData="AniLotti"
                   :height="300"
                   :width="500"
                 />
