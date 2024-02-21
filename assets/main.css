@@ -122,7 +122,7 @@
   line-height: 1.4;
   margin: 0 0 40px !important;
   opacity: 1 !important;
-  padding: 80px 0 0;
+  /* padding: 80px 0 0; */
 }
 .content .title-h2 {
   font-size: 16px;
@@ -354,7 +354,7 @@
   left: 0;
   right: 0;
 }
-.project-slid-desc > a {
+.project-slid-desc > div {
   border-radius: 30px;
   height: 100%;
   width: 100%;
@@ -372,19 +372,19 @@
 .project-slid:hover .slider-image {
   transform: scale(1.06);
 }
-.project-slid-desc > a:hover {
+.project-slid-desc > div:hover {
   transition: 0.2s;
   color: #000;
 }
-.project-slid-desc > a strong {
+.project-slid-desc > div strong {
   font-size: 22px;
 }
-.project-slid-desc > a p {
+.project-slid-desc > div p {
   margin: 10px 0 0 0;
   font-weight: 400;
   font-size: 15px;
 }
-.project-slid-desc > a p .icon {
+.project-slid-desc > div p .icon {
   margin: 0 10px 0 0;
 }
 .slid-desc-link {
@@ -499,6 +499,7 @@
 }
 .content .h1-project {
   margin-bottom: 10px !important;
+  padding: 0;
 }
 .project-block {
   float: left;

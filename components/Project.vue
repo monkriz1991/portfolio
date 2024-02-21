@@ -1,9 +1,16 @@
 <script setup>
+const arrSwiper = ref([]);
 const { data: project } = await useAsyncData("myProject", () =>
   queryContent("/myproject").only("results").findOne()
 );
 const openInNewTab = (url) => {
   window.open("https://" + url, "_blank");
+};
+const slideLink = (swiper) => {
+  arrSwiper.value = JSON.parse(
+    swiper.clickedSlide.children[0].attributes[0].nodeValue
+  );
+  navigateTo("/" + arrSwiper.value);
 };
 </script>
 <template>
@@ -17,6 +24,7 @@ const openInNewTab = (url) => {
             :height="300"
             :spaceBetween="40"
             :slides-per-view="1.5"
+            @click="slideLink"
             :modules="[
               SwiperAutoplay,
               SwiperEffectCreative,
@@ -55,7 +63,10 @@ const openInNewTab = (url) => {
               :key="slide"
               :pagination="{ clickable: true, dynamicBullets: true }"
             >
-              <div class="project-slid">
+              <div
+                v-bind:item-identity="JSON.stringify(slide.kirilica)"
+                class="project-slid"
+              >
                 <div class="project-slid-img">
                   <NuxtImg
                     v-if="slide.img != ''"
@@ -77,7 +88,7 @@ const openInNewTab = (url) => {
                   ></NuxtImg>
                 </div>
                 <div class="project-slid-desc">
-                  <nuxt-link :to="slide.kirilica">
+                  <div>
                     <!-- <ClientOnly>
                       <nuxt-link
                         class="slid-desc-link"
@@ -86,7 +97,7 @@ const openInNewTab = (url) => {
                     ></ClientOnly> -->
                     <strong>{{ slide.name }}</strong>
                     <p><Icon name="solar:siderbar-broken" />{{ slide.type }}</p>
-                  </nuxt-link>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

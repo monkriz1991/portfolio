@@ -8,27 +8,27 @@ const { $anime } = useNuxtApp();
 // const isVisible = ref(true);
 const mobileScin = ref(100);
 const lottieAnimation = ref(null);
-// const animationFun = () => {
-//   $anime({
-//     targets: [".title", ".title-h2"],
-//     translateY: [mobileScin.value],
-//     easing: "easeInOutExpo",
-//     delay: 0,
-//     // delay: function (el, i, l) {
-//     //   return i * 850;
-//     // },
-//     opacity: {
-//       value: 1,
-//     },
-//     // complete: function () {
-//     //   if (!store.isLoadedContact) {
-//     //     fetchData();
-//     //   } else {
-//     //     animationOne.value = store.animationDataContact;
-//     //   }
-//     // },
-//   });
-// };
+const animationFun = () => {
+  $anime({
+    targets: [".title", ".title-h2"],
+    translateY: [mobileScin.value],
+    easing: "easeInOutExpo",
+    delay: 0,
+    // delay: function (el, i, l) {
+    //   return i * 850;
+    // },
+    opacity: {
+      value: 1,
+    },
+    // complete: function () {
+    //   if (!store.isLoadedContact) {
+    //     fetchData();
+    //   } else {
+    //     animationOne.value = store.animationDataContact;
+    //   }
+    // },
+  });
+};
 
 // const fetchData = async () => {
 //   try {
@@ -54,19 +54,17 @@ const mobailScrin = () => {
   }
 };
 onMounted(() => {
-  // mobailScrin();
-  // animationFun();
+  mobailScrin();
+  animationFun();
 });
-// onBeforeUnmount(() => {
-//   // Сброс анимации перед размонтированием компонента
-//   $anime({
-//     targets: [".title", ".title-h2"],
-//     translateY: 0, // Возвращаем начальное положение
-//     opacity: 0, // Скрываем элементы
-//     duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
-//   });
-// });
 onBeforeUnmount(() => {
+  // Сброс анимации перед размонтированием компонента
+  $anime({
+    targets: [".title", ".title-h2"],
+    translateY: 0, // Возвращаем начальное положение
+    opacity: 0, // Скрываем элементы
+    duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
+  });
   lottieAnimation.value.destroy();
 });
 </script>
