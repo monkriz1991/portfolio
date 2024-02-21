@@ -9,27 +9,27 @@ const isVisible = ref(true);
 const mobileScin = ref(100);
 const AniLotti = ref({});
 
-const animationFun = () => {
-  $anime({
-    targets: [".title", ".title-h2"],
-    translateY: [mobileScin.value],
-    easing: "easeInOutExpo",
-    // delay: function (el, i, l) {
-    //   return i * 850;
-    // },
-    delay: 0,
-    opacity: {
-      value: 1,
-    },
-    // complete: function () {
-    //   if (!store.isLoaded) {
-    //     fetchData();
-    //   } else {
-    //     animationOne.value = store.animationData;
-    //   }
-    // },
-  });
-};
+// const animationFun = () => {
+//   $anime({
+//     targets: [".title", ".title-h2"],
+//     translateY: [mobileScin.value],
+//     easing: "easeInOutExpo",
+//     // delay: function (el, i, l) {
+//     //   return i * 850;
+//     // },
+//     delay: 0,
+//     opacity: {
+//       value: 1,
+//     },
+//     // complete: function () {
+//     //   if (!store.isLoaded) {
+//     //     fetchData();
+//     //   } else {
+//     //     animationOne.value = store.animationData;
+//     //   }
+//     // },
+//   });
+// };
 
 // const fetchData = async () => {
 //   try {
@@ -44,33 +44,33 @@ const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
       AniLotti.value = animationLottieMobail;
-      mobileScin.value = 50;
+      // mobileScin.value = 50;
     } else {
       AniLotti.value = animationLottie;
-      mobileScin.value = 100;
+      // mobileScin.value = 100;
     }
   });
   if (document.documentElement.clientWidth <= 800) {
     AniLotti.value = animationLottieMobail;
-    mobileScin.value = 50;
+    // mobileScin.value = 50;
   } else {
     AniLotti.value = animationLottie;
-    mobileScin.value = 100;
+    // mobileScin.value = 100;
   }
 };
 onMounted(() => {
   mobailScrin();
-  animationFun();
+  // animationFun();
 });
-onBeforeUnmount(() => {
-  // Сброс анимации перед размонтированием компонента
-  $anime({
-    targets: [".title", ".title-h2"],
-    translateY: 0, // Возвращаем начальное положение
-    opacity: 0, // Скрываем элементы
-    duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
-  });
-});
+// onBeforeUnmount(() => {
+//   // Сброс анимации перед размонтированием компонента
+//   $anime({
+//     targets: [".title", ".title-h2"],
+//     translateY: 0, // Возвращаем начальное положение
+//     opacity: 0, // Скрываем элементы
+//     duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
+//   });
+// });
 </script>
 
 <template>

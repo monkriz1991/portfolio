@@ -2,27 +2,33 @@
 const router = useRouter();
 const route = useRoute();
 const kirilicaParam = route.params.kirilica;
-let filteredResults = ref([]);
-
+const filteredResults = ref([]);
+const nuxtApp = useNuxtApp();
+// console.log(nuxtApp.$fancybox);
 try {
   const { data: project } = await useAsyncData("myProject", () =>
     queryContent("/myproject").only("results").findOne()
   );
 
-  filteredResults = project.value.results.filter(
+  filteredResults.value = project.value.results.filter(
     (item) => item.kirilica === kirilicaParam
   );
 
-  // Проверяем, остались ли элементы после фильтрации
-  if (filteredResults.length === 0) {
-    // Выполняем перенаправление на другую страницу
-    router.push("/"); // Пример перенаправления на страницу ошибки
+  if (filteredResults.value.length === 0) {
+    router.push("/");
   }
 } catch (error) {
-  // Обработка ошибки
   console.error("Error fetching data:", error);
-  router.push("/"); // Пример перенаправления на страницу ошибки в случае ошибки при загрузке данных
+  router.push("/");
 }
+const closeFancyBox = () => {
+  // Fancybox.close();
+  // alert("pkpk");
+};
+
+onBeforeUnmount(() => {
+  closeFancyBox();
+});
 </script>
 
 <template>
