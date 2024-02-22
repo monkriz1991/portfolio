@@ -13,35 +13,39 @@ try {
   );
 
   if (filteredResults.value.length === 0) {
-    router.push("/");
+    throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
   }
 } catch (error) {
-  console.error("Error fetching data:", error);
-  router.push("/");
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
 useHead({
-  title: filteredResults.value[0].seoTitle,
+  title: filteredResults.value[0]?.seoTitle || "Default Title",
   meta: [
     {
       hid: "description",
       name: "description",
-      content: filteredResults.value[0].seoDescription,
+      content:
+        filteredResults.value[0]?.seoDescription || "Default Description",
     },
     {
       hid: "og:title",
       property: "og:title",
-      content: filteredResults.value[0].seoTitle,
+      content: filteredResults.value[0]?.seoTitle || "Default Open Graph Title",
     },
     {
       hid: "og:description",
       property: "og:description",
-      content: filteredResults.value[0].seoDescription,
+      content:
+        filteredResults.value[0]?.seoDescription ||
+        "Default Open Graph Description",
     },
     {
       hid: "og:image",
       property: "og:image",
-      content: "https://fastsite.pro" + filteredResults.value[0].img,
+      content: filteredResults.value[0]?.img
+        ? "https://fastsite.pro" + filteredResults.value[0].img
+        : "Default Image URL",
     },
   ],
 });
