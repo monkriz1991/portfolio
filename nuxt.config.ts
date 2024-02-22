@@ -13,6 +13,8 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ru",
       },
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       meta: [
         { charset: "utf-8" },
         { name: "yandex-verification", content: "7ab28f56f903831b" },

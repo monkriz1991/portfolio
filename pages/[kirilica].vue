@@ -3,8 +3,6 @@ const router = useRouter();
 const route = useRoute();
 const kirilicaParam = route.params.kirilica;
 const filteredResults = ref([]);
-const nuxtApp = useNuxtApp();
-// console.log(nuxtApp.$fancybox);
 try {
   const { data: project } = await useAsyncData("myProject", () =>
     queryContent("/myproject").only("results").findOne()
@@ -21,13 +19,31 @@ try {
   console.error("Error fetching data:", error);
   router.push("/");
 }
-const closeFancyBox = () => {
-  // Fancybox.close();
-  // alert("pkpk");
-};
 
-onBeforeUnmount(() => {
-  closeFancyBox();
+useHead({
+  title: filteredResults.value[0].seoTitle,
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: filteredResults.value[0].seoDescription,
+    },
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: filteredResults.value[0].seoTitle,
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content: filteredResults.value[0].seoDescription,
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: "https://fastsite.pro" + filteredResults.value[0].img,
+    },
+  ],
 });
 </script>
 
@@ -64,7 +80,7 @@ onBeforeUnmount(() => {
                   <NuxtImg
                     provider="aliyun"
                     :src="item.imgone"
-                    alt="noimg"
+                    :alt="`Основной img проекта  ${item.name}`"
                     format="webp"
                     sizes="sm:100px md:100px lg:100px"
                     data-fancybox="galery project"
@@ -73,15 +89,15 @@ onBeforeUnmount(() => {
                 </div>
                 <div
                   class="project-block-img-right"
-                  v-for="itemImg in item.images"
+                  v-for="(itemImg, index) in item.images"
                   :key="itemImg"
                 >
                   <NuxtImg
                     provider="aliyun"
                     :src="itemImg"
-                    alt="noimg"
+                    :alt="`Доп. img ${index} проекта ${item.name}`"
                     format="webp"
-                    sizes="sm:50px md:50px lg:50px"
+                    sizes="sm:100px md:100px lg:100px"
                     data-fancybox="galery project"
                     loading="lazy"
                   ></NuxtImg>
@@ -90,22 +106,13 @@ onBeforeUnmount(() => {
             </div>
             <div class="project-preview">
               <div class="columns is-multiline">
-                <div class="column is-4">
+                <div
+                  class="column is-4"
+                  v-for="itemStage in item.infostage"
+                  :key="itemStage"
+                >
                   <div class="project-preview-block">
-                    <strong>Разработка корпаративных сайтов, лендингов.</strong>
-                    <Icon name="solar:programming-broken" />
-                  </div>
-                </div>
-                <div class="column is-4">
-                  <div class="project-preview-block">
-                    <strong>Разработка корпаративных сайтов, лендингов.</strong>
-                    <Icon name="solar:programming-broken" />
-                  </div>
-                </div>
-                <div class="column is-4">
-                  <div class="project-preview-block">
-                    <strong>Разработка корпаративных сайтов, лендингов.</strong>
-                    <Icon name="solar:programming-broken" />
+                    <strong>{{ itemStage }}</strong>
                   </div>
                 </div>
               </div>

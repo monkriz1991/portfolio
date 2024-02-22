@@ -30,7 +30,7 @@ const activateTab = (index) => {
                 <NuxtImg
                   provider="aliyun"
                   :src="tab.img"
-                  alt="noimg"
+                  :alt="`img stack ${tab.type}`"
                   format="webp"
                   loading="lazy"
                   sizes="sm:50px md:50px lg:50px"

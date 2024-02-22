@@ -72,7 +72,7 @@ const slideLink = (swiper) => {
                     v-if="slide.img != ''"
                     provider="aliyun"
                     :src="slide.img"
-                    :alt="slide.name"
+                    :alt="`Слайд img проекта ${slide.name}`"
                     format="webp"
                     loading="lazy"
                     class="slider-image"
@@ -81,7 +81,7 @@ const slideLink = (swiper) => {
                     v-else
                     provider="aliyun"
                     src="/nuxt-imf.webp"
-                    alt="noimg"
+                    :alt="`Слайд img проекта ${slide.name}`"
                     format="webp"
                     loading="lazy"
                     class="slider-image"

@@ -1,11 +1,7 @@
 <script setup>
-// import { animationStore } from "@/store/animation";
 import animationLottie from "@/content/animation_contact.json";
 
 const { $anime } = useNuxtApp();
-// const store = animationStore();
-// const animationOne = ref(null);
-// const isVisible = ref(true);
 const mobileScin = ref(100);
 const lottieAnimation = ref(null);
 const animationFun = () => {
@@ -14,31 +10,12 @@ const animationFun = () => {
     translateY: [mobileScin.value],
     easing: "easeInOutExpo",
     delay: 0,
-    // delay: function (el, i, l) {
-    //   return i * 850;
-    // },
     opacity: {
       value: 1,
     },
-    // complete: function () {
-    //   if (!store.isLoadedContact) {
-    //     fetchData();
-    //   } else {
-    //     animationOne.value = store.animationDataContact;
-    //   }
-    // },
   });
 };
 
-// const fetchData = async () => {
-//   try {
-//     const response = await queryContent("/animation_contact").findOne();
-//     store.setAnimationDataContact(response);
-//     animationOne.value = response;
-//   } catch (error) {
-//     console.error("Ошибка при загрузке данных анимации:", error);
-//   }
-// };
 const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
@@ -66,6 +43,33 @@ onBeforeUnmount(() => {
     duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
   });
   lottieAnimation.value.destroy();
+});
+useHead({
+  title: "FastSite — Ваши контакты с креативом и профессионализмом",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Связаться с нами — значит войти в мир креативных возможностей и профессионального подхода. FastSite готов предложить вам свои услуги в области веб-разработки и дизайна. Давайте создадим вместе что-то уникальное!",
+    },
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "FastSite — Ваши контакты с креативом и профессионализмом",
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content:
+        "Связаться с нами — значит войти в мир креативных возможностей и профессионального подхода. FastSite готов предложить вам свои услуги в области веб-разработки и дизайна. Давайте создадим вместе что-то уникальное!",
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: "https://fastsite.pro/nuxt-imf.webp",
+    },
+  ],
 });
 </script>
 

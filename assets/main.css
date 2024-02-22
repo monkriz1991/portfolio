@@ -363,16 +363,21 @@
   background-color: #cacaca4b;
   align-items: flex-start;
   overflow: hidden;
-  color: #333;
+  color: #7a7a7a;
   flex-direction: column;
   justify-content: center;
   z-index: 44;
   position: relative;
+  cursor: pointer;
 }
 .project-slid:hover .slider-image {
   transform: scale(1.06);
 }
 .project-slid-desc > div:hover {
+  transition: 0.2s;
+  color: #000;
+}
+.project-slid-desc > div:hover strong {
   transition: 0.2s;
   color: #000;
 }
@@ -530,14 +535,14 @@
   cursor: pointer;
 }
 .project-block-img-right {
-  height: 200px;
+  height: 198px;
   position: relative;
 }
 .project-block-img-right img {
   height: 100%;
   width: 100%;
-  -o-object-fit: none;
-  object-fit: none;
+  -o-object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .project-info {
