@@ -1,7 +1,7 @@
 <script setup>
 const router = useRouter();
 const route = useRoute();
-const kirilicaParam = route.params.kirilica;
+const kirilicaParam = route.params.id;
 const filteredResults = ref([]);
 try {
   const { data: project } = await useAsyncData("myProject", () =>

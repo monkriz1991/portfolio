@@ -75,6 +75,31 @@ onBeforeUnmount(() => {
 onBeforeUnmount(() => {
   lottieAnimation.value.destroy();
 });
+useHead({
+  title: "FastSite - Разботка web - приложений Nuxt3",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Создаём быстрые сайты любого типа по выгодным ценам.",
+    },
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "FastSite - Разботка web - приложений Nuxt3",
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content: "Создаём быстрые сайты любого типа по выгодным ценам.",
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: `https://fastsite.pro/nuxt-imf.webp`,
+    },
+  ],
+});
 </script>
 
 <template>

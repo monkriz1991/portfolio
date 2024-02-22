@@ -10,7 +10,7 @@ const slideLink = (swiper) => {
   arrSwiper.value = JSON.parse(
     swiper.clickedSlide.children[0].attributes[0].nodeValue
   );
-  navigateTo("/" + arrSwiper.value);
+  navigateTo("/catalog/" + arrSwiper.value);
 };
 </script>
 <template>
