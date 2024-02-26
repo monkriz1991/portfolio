@@ -620,23 +620,51 @@
   height: 100%;
   max-height: 400px;
   position: relative;
+  overflow: hidden;
 }
 .project-block-img-left img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
+
 .project-block-img-right {
   height: 198px;
+  width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .project-block-img-right img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
+}
+.project-block-img-right::after,
+.project-block-img-left::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  transition: transform 0.3s ease-in-out;
+  right: 0px;
+  left: 0px;
+  background-color: rgb(0 0 0 / 3%);
+  pointer-events: none; /* Это свойство отключит события мыши для псевдоэлемента, так что он не будет перекрывать изображения */
+}
+.project-block-img-right:hover::after,
+.project-block-img-left:hover::after {
+  background-color: rgb(0 0 0 / 6%);
+  transition: 0.2s;
+}
+.project-block-img-right:hover img,
+.project-block-img-left:hover img {
+  transform: scale(1.06);
 }
 .project-info {
   margin: 0 0 30px;
