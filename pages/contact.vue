@@ -145,7 +145,7 @@ useHead({
                   <div class="column is-12">
                     <div class="social-block">
                       <nuxt-link
-                        href="tel:+37529153-13-99"
+                        href="tel:+37529896-60-76"
                         class="button is-warning is-light"
                       >
                         <span class="icon"
