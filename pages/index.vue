@@ -111,8 +111,8 @@ useHead({
             <h1 class="title">Web-решения для бизнеса</h1>
             <div class="title-h2">
               <span
-                >Разработка сайтов, CRM систем на базе современных
-                технологий.</span
+                >Разработка <b>быстрых</b> сайтов, web приложений на базе
+                современных технологий.</span
               >
             </div>
 
@@ -137,7 +137,10 @@ useHead({
                   data-aos-once="true"
                 >
                   <div class="index-desctiption-block">
-                    <strong>Разработка корпаративных сайтов, лендингов.</strong>
+                    <strong
+                      >Корпаративные сайты, магазины, CRM системы,
+                      лендинги.</strong
+                    >
                     <Icon name="solar:programming-broken" />
                   </div>
                 </div>
@@ -150,7 +153,10 @@ useHead({
                   data-aos-once="true"
                 >
                   <div class="index-desctiption-block">
-                    <strong>Интернет магазины, СЕО оптимизация.</strong>
+                    <strong>
+                      СЕО оптимизация, настройка в рекламы в сетях,
+                      консультация.</strong
+                    >
                     <Icon name="solar:screencast-broken" />
                   </div>
                 </div>
@@ -163,7 +169,7 @@ useHead({
                   data-aos-once="true"
                 >
                   <div class="index-desctiption-block">
-                    <strong>CRM систем и индивидуальных решений.</strong>
+                    <strong>Сложные проекты по индивидуальным запросам.</strong>
                     <Icon name="solar:code-square-broken" />
                   </div>
                 </div>

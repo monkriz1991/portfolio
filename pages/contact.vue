@@ -94,8 +94,70 @@ useHead({
               </client-only>
             </div>
           </div>
-          <div class="contact-form">
-            <Order />
+          <div class="columns is-multiline">
+            <div class="column is-8">
+              <div class="contact-form">
+                <Order />
+              </div>
+            </div>
+            <div class="column is-4">
+              <div data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
+                <div class="columns is-variable is-2 is-multiline">
+                  <div class="column is-12 pb-1">
+                    <div class="social-block">
+                      <nuxt-link
+                        href="viber://chat?number=%2B375298966076"
+                        class="button is-link is-light"
+                      >
+                        <span class="icon"
+                          ><Icon name="solar:phone-calling-broken"
+                        /></span>
+                        <span>Viber</span>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                  <div class="column is-12 pb-1">
+                    <div class="social-block">
+                      <nuxt-link
+                        href="tg://resolve?domain=monkrizi"
+                        class="button is-info is-light"
+                      >
+                        <span class="icon"
+                          ><Icon name="solar:plain-2-broken"
+                        /></span>
+                        <span>Telegram</span>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                  <div class="column is-12 pb-1">
+                    <div class="social-block">
+                      <nuxt-link
+                        href="mailto: monkriz1991@gmail.com"
+                        class="button is-primary is-light"
+                      >
+                        <span class="icon"
+                          ><Icon name="solar:letter-broken"
+                        /></span>
+                        <span>Email</span>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                  <div class="column is-12">
+                    <div class="social-block">
+                      <nuxt-link
+                        href="tel:+37529153-13-99"
+                        class="button is-warning is-light"
+                      >
+                        <span class="icon"
+                          ><Icon name="solar:smartphone-broken"
+                        /></span>
+                        <span>Mobail</span>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

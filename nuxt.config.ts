@@ -90,13 +90,14 @@ export default defineNuxtConfig({
   site: {
     url: "https://fastsite.pro/", // Укажите URL вашего сайта здесь
   },
-  sitemap: {
-    hostname: "https://fastsite.pro",
-    exclude: [], // Перечислите маршруты, которые нужно исключить из sitemap
-    routes: [
-      "/catalog", // Добавляем маршрут каталога в sitemap
-    ],
-  },
+  // sitemap: {
+  //   hostname: "https://fastsite.pro",
+  //   exclude: [], // Перечислите маршруты, которые нужно исключить из sitemap
+  //   routes: [
+  //     "/catalog", // Добавляем маршрут каталога в sitemap
+  //   ],
+  // },
+
   piniaPersistedstate: {
     cookieOptions: {
       sameSite: "strict",

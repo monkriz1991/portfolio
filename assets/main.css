@@ -541,7 +541,7 @@
 .index-order-info {
 }
 .form-info-but {
-  margin: 20px 0 0;
+  margin: 20px 0 40px;
 }
 .index-b-modal {
   background-color: #49a4a7;
@@ -721,6 +721,18 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+.social-block {
+  width: 100%;
+}
+.social-block a {
+  width: 100%;
+  border-radius: 9px;
+  padding: 20px;
+  height: auto;
+}
+.social-block .icon {
 }
 @media (min-width: 1023px) {
   .project-block-img:first-child {
