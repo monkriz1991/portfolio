@@ -1,4 +1,8 @@
 <script setup>
+definePageMeta({
+  keepalive: true,
+});
+
 const router = useRouter();
 const route = useRoute();
 const kirilicaParam = route.params.id;
@@ -84,11 +88,11 @@ useHead({
                   <NuxtImg
                     provider="aliyun"
                     :src="item.imgone"
-                    :alt="`Основной img проекта  ${item.name}`"
+                    :alt="`Основной img проекта ${item.name}`"
                     format="webp"
+                    loading="lazy"
                     sizes="sm:100px md:100px lg:100px"
                     data-fancybox="galery project"
-                    preload
                   ></NuxtImg>
                 </div>
                 <div
@@ -101,9 +105,9 @@ useHead({
                     :src="itemImg"
                     :alt="`Доп. img ${index} проекта ${item.name}`"
                     format="webp"
+                    loading="lazy"
                     sizes="sm:100px md:100px lg:100px"
                     data-fancybox="galery project"
-                    loading="lazy"
                   ></NuxtImg>
                 </div>
               </div>

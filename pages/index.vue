@@ -1,10 +1,12 @@
 <script setup>
-// import { animationStore } from "@/store/animation";
 import animationLottie from "@/content/animation_index.json";
 import animationLottieMobail from "@/content/animation_index_mobail.json";
+
+definePageMeta({
+  keepalive: true,
+});
+
 const { $anime } = useNuxtApp();
-// const store = animationStore();
-// const animationOne = ref(null);
 const isVisible = ref(true);
 const mobileScin = ref(100);
 const AniLotti = ref({});
@@ -15,32 +17,13 @@ const animationFun = () => {
     targets: [".title", ".title-h2"],
     translateY: [mobileScin.value],
     easing: "easeInOutExpo",
-    // delay: function (el, i, l) {
-    //   return i * 850;
-    // },
     delay: 0,
     opacity: {
       value: 1,
     },
-    // complete: function () {
-    //   if (!store.isLoaded) {
-    //     fetchData();
-    //   } else {
-    //     animationOne.value = store.animationData;
-    //   }
-    // },
   });
 };
 
-// const fetchData = async () => {
-//   try {
-//     const response = await queryContent("/animation_index").findOne();
-//     store.setAnimationData(response);
-//     animationOne.value = response;
-//   } catch (error) {
-//     console.error("Ошибка при загрузке данных анимации:", error);
-//   }
-// };
 const mobailScrin = () => {
   window.addEventListener("resize", (event) => {
     if (event.target.innerWidth <= 800) {
@@ -61,19 +44,20 @@ const mobailScrin = () => {
 };
 onMounted(() => {
   mobailScrin();
-  animationFun();
+  setTimeout(() => {
+    animationFun();
+  }, 100);
 });
 onBeforeUnmount(() => {
-  // Сброс анимации перед размонтированием компонента
   $anime({
     targets: [".title", ".title-h2"],
-    translateY: 0, // Возвращаем начальное положение
-    opacity: 0, // Скрываем элементы
-    duration: 0, // Длительность анимации равна 0, чтобы мгновенно выполнить сброс
+    translateY: 0,
+    opacity: 0,
+    duration: 0,
   });
-});
-onBeforeUnmount(() => {
-  lottieAnimation.value.destroy();
+  if (lottieAnimation.value) {
+    lottieAnimation.value.destroy();
+  }
 });
 useHead({
   title: "FastSite - Разботка web - приложений Nuxt3",

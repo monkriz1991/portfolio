@@ -1,6 +1,10 @@
 <script setup>
 import animationLottie from "@/content/animation_contact.json";
 
+definePageMeta({
+  keepalive: true,
+});
+
 const { $anime } = useNuxtApp();
 const mobileScin = ref(100);
 const lottieAnimation = ref(null);
@@ -32,7 +36,9 @@ const mobailScrin = () => {
 };
 onMounted(() => {
   mobailScrin();
-  animationFun();
+  setTimeout(() => {
+    animationFun();
+  }, 100);
 });
 onBeforeUnmount(() => {
   // Сброс анимации перед размонтированием компонента

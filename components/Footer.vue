@@ -13,7 +13,7 @@
                 <nuxt-link to="/contact">Контакты</nuxt-link>
               </div>
             </div>
-            <p>© FastSite 2024</p>
+            <p>© FastSite 2025</p>
           </div>
         </div>
       </footer>

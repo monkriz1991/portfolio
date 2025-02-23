@@ -37,12 +37,12 @@ export default defineNuxtConfig({
         {
           hid: "og:url",
           property: "og:url",
-          content: `https://fastsite.pro/`,
+          content: `https://fastsite.tech/`,
         },
         {
           hid: "og:image",
           property: "og:image",
-          content: `https://fastsite.pro/nuxt-imf.webp`,
+          content: `https://fastsite.tech/nuxt-imf.webp`,
         },
         {
           hid: "og:locale",
@@ -88,10 +88,10 @@ export default defineNuxtConfig({
     ],
   ],
   site: {
-    url: "https://fastsite.pro/", // Укажите URL вашего сайта здесь
+    url: "https://fastsite.tech/", // Укажите URL вашего сайта здесь
   },
   // sitemap: {
-  //   hostname: "https://fastsite.pro",
+  //   hostname: "https://fastsite.tech",
   //   exclude: [], // Перечислите маршруты, которые нужно исключить из sitemap
   //   routes: [
   //     "/catalog", // Добавляем маршрут каталога в sitemap
@@ -106,7 +106,7 @@ export default defineNuxtConfig({
   },
   image: {
     aliyun: {
-      baseURL: "https://fastsite.pro/",
+      baseURL: "https://fastsite.tech/",
     },
   },
   css: ["@/node_modules/bulma/css/bulma.css", "@/assets/main.css"],

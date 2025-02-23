@@ -83,18 +83,11 @@ const slideLink = (swiper) => {
                     src="/nuxt-imf.webp"
                     :alt="`Слайд img проекта ${slide.name}`"
                     format="webp"
-                    loading="lazy"
                     class="slider-image"
                   ></NuxtImg>
                 </div>
                 <div class="project-slid-desc">
                   <div>
-                    <!-- <ClientOnly>
-                      <nuxt-link
-                        class="slid-desc-link"
-                        @click.prevent="openInNewTab(slide.link)"
-                        ><Icon name="solar:square-top-down-broken" /></nuxt-link
-                    ></ClientOnly> -->
                     <strong>{{ slide.name }}</strong>
                     <p><Icon name="solar:siderbar-broken" />{{ slide.type }}</p>
                   </div>
